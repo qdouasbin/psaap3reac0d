@@ -134,6 +134,8 @@ from psaap3reac0d import single_reactor
 if __name__ == "__main__":
     # load TOML input file as a dictionary
     input_file = '../tests/BKD_LP4.toml'
+
+    # Collect input data as a Python dictionary
     params = toml.load(input_file)
 
     # Conduct simulation
