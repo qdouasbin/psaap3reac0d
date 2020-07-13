@@ -118,7 +118,7 @@ t_init = 0.0
 t_end = 3e-2
 
 [IO]
-# Output directory (right results as csv file)
+# Output directory (write results as csv file)
 output_dir = 'results'
 ```
 
