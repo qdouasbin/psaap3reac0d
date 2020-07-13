@@ -9,14 +9,35 @@ A theory guide is available ![here](https://cantera.org/science/reactors.html).
 
 ## Installation
 
- 1. Cantera installation using Conda: ![https://cantera.org/install/conda-install.html](https://cantera.org/install/conda-install.html)
- 2. git clone of the repository
+First, it is highly recommended to install Cantera using Conda by following the installation guide available on the Cantera web page: ![https://cantera.org/install/conda-install.html](https://cantera.org/install/conda-install.html).
 
-Todo: Cantera install + git clone + python setup.py install/devel
+Clone the Git repository by running the command:
+
+```bash
+git clone https://github.com/qdouasbin/psaap3reac0d.git
+```
+
+Next, you should install the python package in your current python environment. The requirement are automatically taken care of by running the command:
+
+```bash 
+cd psaap3reac0d
+python setup.py develop
+```
+
+The python package `psaap3reac0d` should now be available in your installed packages. One can very this by running the `pip list` command:
+
+```bash
+pip list | grep psaap
+```
+Which should give an output similar to this:
+```bash
+psaap3reac0d       0.0.1               MY_PATH_TO_THE_REPOSITORY/psaap3reac0d
+```
+
 
 ## How to use it
 
-The input files are in the TOML format. 
+    The input files are in the TOML format (more details here ![toml guide](https://github.com/toml-lang/toml)). 
 This allows to handle the parameters of the solver as a nested dictionary, which provides an easy API 
 to run ensemble runs or parameteric studies.
 
@@ -101,3 +122,33 @@ t_end = 3e-2
 output_dir = 'results'
 ```
 
+An example of run is given in the `tests` directory:
+
+```python
+import matplotlib.pyplot as plt
+import toml
+
+# Import our homemade PSAAP3 python library
+from psaap3reac0d import single_reactor
+
+if __name__ == "__main__":
+    # load TOML input file as a dictionary
+    input_file = '../tests/BKD_LP4.toml'
+    params = toml.load(input_file)
+
+    # Conduct simulation
+    result = single_reactor.single_reactor_simulation(params)
+
+    # Plot results
+    plt.figure()
+    plt.plot(result['time'], result['T'])
+    plt.xlabel('Time [s]')
+    plt.ylabel('Temperature [K]')
+
+    plt.figure()
+    plt.plot(result['time'], 1e-5 * result['P'])
+    plt.xlabel('Time [s]')
+    plt.ylabel('Pressure [bar]')
+
+    plt.show()
+```

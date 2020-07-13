@@ -183,8 +183,6 @@ def single_reactor_simulation(params):
             res['mdot_ox'].append(_oxidizer['mdot'])
             res['mdot_igniter'].append(gaussian_pulse_H_igniter_mdot(t_now))
             res['mass'].append(combustor.mass)
-            # if _cur_state_rho > 1000:
-            #     t_final = 0.
 
     df = pd.DataFrame.from_dict(res)
     df['mdot_in'] = df['mdot_fuel'] + df['mdot_ox'] + df['mdot_igniter']
@@ -196,8 +194,6 @@ def single_reactor_simulation(params):
     # Output data as a csv file
     df.to_csv(os.path.join(_out_dir, '%s_%s.csv' % (params['Case']['name'], _ignition['type'])), index=False)
 
-    # plt.plot(df['time'], df['T'])
-    # plt.show()
     return df
 
 

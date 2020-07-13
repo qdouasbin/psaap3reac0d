@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import toml
 
+# Import our homemade PSAAP3 python library
 from psaap3reac0d import single_reactor
 
 if __name__ == "__main__":
