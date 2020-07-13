@@ -5,11 +5,11 @@ To do so, we use a Cantera network built from simple 0D components (reservoirs, 
 
 ## Theory
 
-A theory guide is available ![here](https://cantera.org/science/reactors.html).
+A theory guide is available [here](https://cantera.org/science/reactors.html).
 
 ## Installation
 
-First, it is highly recommended to install Cantera using Conda by following the installation guide available on the Cantera web page: ![https://cantera.org/install/conda-install.html](https://cantera.org/install/conda-install.html).
+First, it is highly recommended to install Cantera using Conda by following the installation guide available on the Cantera web page: [https://cantera.org/install/conda-install.html](https://cantera.org/install/conda-install.html).
 
 Clone the Git repository by running the command:
 
@@ -37,7 +37,7 @@ psaap3reac0d       0.0.1               MY_PATH_TO_THE_REPOSITORY/psaap3reac0d
 
 ## How to use it
 
-    The input files are in the TOML format (more details here ![toml guide](https://github.com/toml-lang/toml)). 
+The input files are in the TOML format (more details [here](https://github.com/toml-lang/toml)). 
 This allows to handle the parameters of the solver as a nested dictionary, which provides an easy API 
 to run ensemble runs or parameteric studies.
 
