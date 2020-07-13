@@ -9,7 +9,7 @@ A theory guide is available [here](https://cantera.org/science/reactors.html).
 
 ## Installation
 
-First, it is highly recommended to install Cantera using Conda by following the installation guide available on the Cantera web page: [https://cantera.org/install/conda-install.html](https://cantera.org/install/conda-install.html).
+First, it is highly recommended to install Cantera using Conda by following the installation guide available on [the Cantera web page](https://cantera.org/install/conda-install.html).
 
 Clone the Git repository by running the command:
 
